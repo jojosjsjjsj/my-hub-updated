@@ -16,7 +16,7 @@ MainSection:NewButton("nuke", "WTF BOOOM", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Plsstpppppp/OKm/main/README.md'))()
     end)
 
-MainSection:NewButton("A-60", "summon A-60", function()
+MainSection:NewButton("A-60 from skid hub", "summon A-60", function()
 
 loadstring(game:HttpGet('https://pastebin.com/raw/8fB9YUBG'))()
 end)
@@ -101,7 +101,7 @@ MainSection:NewButton("Minecraft room mod (made by penguinmaniack", "Minecraft",
 loadstring(game:HttpGet("https://pastebin.com/raw/y2WmccLk"))()
 end)
 
-MainSection:NewButton("I forgot ", "Minecraft", function()
+MainSection:NewButton("I forgot "0pp, "Minecraft", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
@@ -137,7 +137,7 @@ MainSection:NewButton("door 000000 devil cricifix but door (READ DESC) ", "same 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAccelerator/CometRestoration/main/CursedRoom.lua"))()
 end)
 
-MainSection:NewButton("A-60", "Beta", function()
+MainSection:NewButton("A-60 V2", "Beta", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/SNNPjAyq"))()  
 end)
 
@@ -208,20 +208,20 @@ local entity = Creator.createEntity({
     CustomName = "Ripper", -- Custom name of your entity
     Model = "rbxassetid:////11838452422", -- Can be GitHub file or rbxassetid
     Speed = 400, -- Percentage, 100 = default Rush speed
-    DelayTime = 13,-- Time before starting cycles (seconds)
+    DelayTime = 13, -- Time before starting cycles (seconds)
     HeightOffset = 0,
     CanKill = true,
-    KillRange = 20,
+    KillRange = 30,
     BreakLights = true,
     BackwardsMovement = false,
     FlickerLights = {
-        false, -- Enabled/Disabled
+        true, -- Enabled/Disabled
         1, -- Time (seconds)
     },
     Cycles = {
-        Min = 8,
-        Max = 8,
-        WaitTime = 1,
+        Min = 1,
+        Max = 1,
+        WaitTime = 0,
     },
     CamShake = {
         true, -- Enabled/Disabled
@@ -231,11 +231,11 @@ local entity = Creator.createEntity({
     Jumpscare = {
         true, -- Enabled/Disabled
         {
-            Image1 = "rbxassetid://0000000000", -- Image1 url
-            Image2 = "rbxassetid://10483855823", -- Image2 url
+            Image1 = "rbxassetid://115830521", -- Image1 url
+            Image2 = "rbxassetid://11708346230", -- Image2 url
             Shake = true,
             Sound1 = {
-                000000000000, -- SoundId
+                0000000000, -- SoundId
                 { Volume = 0.5 }, -- Sound properties
             },
             Sound2 = {
@@ -248,13 +248,15 @@ local entity = Creator.createEntity({
             },
             Tease = {
                 true, -- Enabled/Disabled
-                Min = 1,
-                Max = 1,
+                Min = 8,
+                Max = 8,
             },
         },
     },
     CustomDialog = {"you died to ripper...", "hide when it happens!", "dont leave early he stays at the door."}, -- Custom death message
 })
+
+firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"You Died To Ripper ", "he will spawn in after 10 seconds. ", "if you hear a sound wait 10 seconds don't leave early!"})
 
 -----[[ Advanced ]]-----
 entity.Debug.OnEntitySpawned = function(entityTable)
@@ -288,6 +290,9 @@ end
 
 -- Run the created entity
 Creator.runEntity(entity)
+
+firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent, "Huh..?")
+		wait(9.0)
 end)
 
 MainSection:NewButton("wood block palcer", "Beta", function()
@@ -307,3 +312,68 @@ end)
 MainSection:NewButton("hoho hub", "Beta", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI'))()
 end)
+
+MainSection:NewButton("charred room", "Beta", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAccelerator/CometV4/main/OtherBigScripts/Him.lua",true))()
+end)
+
+MainSection:NewButton("spawn figure", "Beta", function()
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+
+local entity = Creator.createEntity({
+    CustomName = "Figure", -- Custom name of your entity
+    Model = 11738850341,
+    Speed = 60, -- Percentage, 100 = default Rush speed
+    DelayTime = 3, -- Time before starting cycles (seconds)
+    HeightOffset = 0,
+    CanKill = false,
+    BreakLights = false,
+    FlickerLights = {
+        true, -- Enabled
+        4, -- Time (seconds)
+    },
+    Cycles = {
+        Min = 1,
+        Max = 1000000,
+        WaitTime = 3,
+    },
+    CamShake = {
+        true, -- Enabled
+        {5, 15, 0.1, 1}, -- Shake values (don't change if you don't know)
+        1, -- Shake start distance (from Entity to you)
+    },
+    Jumpscare = {
+        false, -- Enabled ('false' if you don't want jumpscare)
+        {
+            Image1 = "https://www.roblox.com/library/11401298618/bacon-but-not-as-mad", -- Image1 url
+            Image2 = "https://www.roblox.com/library/11401297072/Bacon", -- Image2 url
+            Shake = false,
+            Sound1 = { 
+               11400679305, -- SoundId
+                { Volume = 1 }, -- Sound properties
+            },
+            Sound2 = {
+                10483837590, -- SoundId
+                { Volume = 0 }, -- Sound properties
+            },
+            Flashing = {
+                false, -- Enabled
+                Color3.fromRGB(70, 25, 0), -- Color
+            },
+            Tease = {
+                false, -- Enabled ('false' if you don't want tease)
+                Min = 1,
+                Max = 1,
+            },
+        },
+    },
+})
+
+------------------------
+
+-- Run the created entity
+Creator.runEntity(entity)
+end)
+
+MainSection:NewButton("A-60 v3"o, "Beta", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/114514zuduf8dee/gui/main/a60.lua"))()
